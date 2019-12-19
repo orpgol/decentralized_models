@@ -1,0 +1,6 @@
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
+RUN echo "Installing Jupyter Lab on top of ${BASE_IMAGE}"
+RUN pip install jupyterlab
+WORKDIR /workspace
+ENTRYPOINT jupyter lab --ip=0.0.0.0 --no-browser --allow-root
